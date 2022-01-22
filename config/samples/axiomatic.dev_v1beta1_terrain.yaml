@@ -1,0 +1,6 @@
+apiVersion: axiomatic.dev.my.domain/v1beta1
+kind: Terrain
+metadata:
+  name: terrain-sample
+spec:
+  # TODO(user): Add fields here
