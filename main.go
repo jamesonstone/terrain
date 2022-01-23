@@ -31,8 +31,8 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/healthz"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	axiomaticdevv1beta1 "github.com/jstone28/terrain/api/v1beta1"
-	"github.com/jstone28/terrain/controllers"
+	appsv1beta1 "axiomatic.dev/terrain/api/v1beta1"
+	"axiomatic.dev/terrain/controllers"
 	//+kubebuilder:scaffold:imports
 )
 
@@ -44,7 +44,7 @@ var (
 func init() {
 	utilruntime.Must(clientgoscheme.AddToScheme(scheme))
 
-	utilruntime.Must(axiomaticdevv1beta1.AddToScheme(scheme))
+	utilruntime.Must(appsv1beta1.AddToScheme(scheme))
 	//+kubebuilder:scaffold:scheme
 }
 
@@ -71,7 +71,7 @@ func main() {
 		Port:                   9443,
 		HealthProbeBindAddress: probeAddr,
 		LeaderElection:         enableLeaderElection,
-		LeaderElectionID:       "bb461b31.my.domain",
+		LeaderElectionID:       "46582021.axiomatic.dev",
 	})
 	if err != nil {
 		setupLog.Error(err, "unable to start manager")

@@ -24,7 +24,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
-	axiomaticdevv1beta1 "github.com/jstone28/terrain/api/v1beta1"
+	appsv1beta1 "axiomatic.dev/terrain/api/v1beta1"
 )
 
 // TerrainReconciler reconciles a Terrain object
@@ -33,9 +33,9 @@ type TerrainReconciler struct {
 	Scheme *runtime.Scheme
 }
 
-//+kubebuilder:rbac:groups=axiomatic.dev.my.domain,resources=terrains,verbs=get;list;watch;create;update;patch;delete
-//+kubebuilder:rbac:groups=axiomatic.dev.my.domain,resources=terrains/status,verbs=get;update;patch
-//+kubebuilder:rbac:groups=axiomatic.dev.my.domain,resources=terrains/finalizers,verbs=update
+//+kubebuilder:rbac:groups=apps.axiomatic.dev,resources=terrains,verbs=get;list;watch;create;update;patch;delete
+//+kubebuilder:rbac:groups=apps.axiomatic.dev,resources=terrains/status,verbs=get;update;patch
+//+kubebuilder:rbac:groups=apps.axiomatic.dev,resources=terrains/finalizers,verbs=update
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
@@ -57,6 +57,6 @@ func (r *TerrainReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ct
 // SetupWithManager sets up the controller with the Manager.
 func (r *TerrainReconciler) SetupWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewControllerManagedBy(mgr).
-		For(&axiomaticdevv1beta1.Terrain{}).
+		For(&appsv1beta1.Terrain{}).
 		Complete(r)
 }

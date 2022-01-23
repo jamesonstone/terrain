@@ -6,9 +6,9 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.7.0
   creationTimestamp: null
-  name: terrains.axiomatic.dev.my.domain
+  name: terrains.apps.axiomatic.dev
 spec:
-  group: axiomatic.dev.my.domain
+  group: apps.axiomatic.dev
   names:
     kind: Terrain
     listKind: TerrainList

@@ -8,4 +8,4 @@ webhook:
   port: 9443
 leaderElection:
   leaderElect: true
-  resourceName: bb461b31.my.domain
+  resourceName: 46582021.axiomatic.dev

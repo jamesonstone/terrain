@@ -1,4 +1,4 @@
-apiVersion: axiomatic.dev.my.domain/v1beta1
+apiVersion: apps.axiomatic.dev/v1beta1
 kind: Terrain
 metadata:
   name: terrain-sample

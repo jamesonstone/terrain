@@ -1,4 +1,4 @@
-module github.com/jstone28/terrain
+module axiomatic.dev/terrain
 
 go 1.16
 

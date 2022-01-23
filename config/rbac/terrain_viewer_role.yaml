@@ -5,7 +5,7 @@ metadata:
   name: terrain-viewer-role
 rules:
 - apiGroups:
-  - axiomatic.dev.my.domain
+  - apps.axiomatic.dev
   resources:
   - terrains
   verbs:
@@ -13,7 +13,7 @@ rules:
   - list
   - watch
 - apiGroups:
-  - axiomatic.dev.my.domain
+  - apps.axiomatic.dev
   resources:
   - terrains/status
   verbs:
