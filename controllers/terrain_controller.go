@@ -18,11 +18,12 @@ package controllers
 
 import (
 	"context"
+	"log"
 
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
-	"sigs.k8s.io/controller-runtime/pkg/log"
+	oplog "sigs.k8s.io/controller-runtime/pkg/log"
 
 	appsv1beta1 "axiomatic.dev/terrain/api/v1beta1"
 )
@@ -47,9 +48,14 @@ type TerrainReconciler struct {
 // For more details, check Reconcile and its Result here:
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.10.0/pkg/reconcile
 func (r *TerrainReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
-	_ = log.FromContext(ctx)
+	_ = oplog.FromContext(ctx)
+	var t appsv1beta1.Terrain
 
-	// TODO(user): your logic here
+	if err := r.Client.Get(ctx, req.NamespacedName, &t); err != nil {
+		return ctrl.Result{}, nil
+	}
+
+	log.Println(t.Spec.Foo)
 
 	return ctrl.Result{}, nil
 }

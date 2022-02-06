@@ -28,4 +28,4 @@ make run
 
 ## Support
 
-J.Stone 🥃💎
+🥃J.Stone💎
